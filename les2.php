@@ -51,5 +51,12 @@
             border: 1px solid black;
         }
     </style>
+    <?php
+    echo "<br>";
+    $numberOne = 10;
+    $numberTwo = 10;
+    ($result = $numberOne + $numberTwo);
+    echo "het nummer is $result";
+    ?>
 </body>
 </html>
