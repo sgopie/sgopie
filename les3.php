@@ -48,5 +48,16 @@
         echo "<br>";
     }
     ?>
+
+    <?php
+    $ages = array(
+            'Peter' => 35,
+            'Ben' => 37,
+            'Klaas' => 26,
+    );
+    print_r($ages);
+    echo "<br>";
+    echo 'de leeftijd van ben is ' .$ages['Ben']. ' jaar';
+    ?>
 </body>
 </html>
