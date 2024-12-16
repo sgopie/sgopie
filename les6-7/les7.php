@@ -1,9 +1,14 @@
 <?php
-include 'db.connect.php';
+$db = new PDO("mysql:host=localhost;dbname=fietsenmaker",
+    "root", "");
+$query = $db->prepare("select * FROM review");
+$query->execute();
+
+$classes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 const NAME_REQUIRED = 'Naam invullen';
 const REVIEW_REQUIRED = 'Review invullen';
-const AGREEMENT_REQUIRED = 'voorwaarden accepteren';
+const AGREEMENT_REQUIRED = 'Voorwaarden accepteren';
 
 $errors = [];
 $inputs = [];
@@ -12,31 +17,31 @@ if (isset($_POST['send'])) {
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
     $name = trim($name);
     if (empty($name)) {
-        $errors[] = NAME_REQUIRED;
+        $errors['name'] = NAME_REQUIRED;
     } else {
         $inputs['name'] = $name;
     }
 
-$review = filter_input('review', FILTER_SANITIZE_SPECIAL_CHARS);
+    $review = filter_input(INPUT_POST, 'review' ,FILTER_SANITIZE_SPECIAL_CHARS);
     $review = trim($review);
     if (empty($review)) {
-    $errors[] = REVIEW_REQUIRED;
+    $errors['review'] = REVIEW_REQUIRED;
     } else {
         $inputs['review'] = $review;
     }
 
-    $agree = filter_input('agree', FILTER_SANITIZE_SPECIAL_CHARS);
+    $agree = filter_input( INPUT_POST,'agree', FILTER_SANITIZE_SPECIAL_CHARS);
     $agree = trim($agree);
     if (empty($agree)) {
-        $errors[] = AGREEMENT_REQUIRED;
+        $errors['agree'] = AGREEMENT_REQUIRED;
     } else {
         $inputs['agree'] = $agree;
     }
 
-    if (empty($errors) === 0) {
+    if (count($errors) === 0) {
         global $db;
 
-        $sth = $db->prepare('INSERT INTO review (name, content) VALUES (:name, review)');
+        $sth = $db->prepare('INSERT INTO review (name, content) VALUES (:name, :review)');
         $sth->bindValue(':name', $inputs['name']);
         $sth->bindValue(':review', $inputs['review']);
         $result = $sth->execute();
