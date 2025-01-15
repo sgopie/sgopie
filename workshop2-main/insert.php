@@ -76,7 +76,7 @@ if(isset($_POST["submit"])) {
             <label class="form-label">Product name</label>
             <input type="text" class="form-control" name="name" value="<?=$name ?? ''?>">
             <div class=" text-danger"><?=$errorName?></div>
-        </div>+
+        </div>
         <div class="mb-3">
             <label class="form-label">Kies afbeelding van telefoon</label>
             <input class="form-control" name="image" type="file" >
