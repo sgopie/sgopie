@@ -23,12 +23,13 @@ $smartphones = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($smartphones as $smartphone): ?>
     <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="<?=$smartphone->image ?>">
+            <img src="<?=$smartphone['image'];?>">
             <div class="card-body">
-                <h5 class="card-title"><?=$smartphone->name?></h5>
+                <h5 class="card-title"><?=$smartphone['name'];?></h5>
                 <button class="btn btn-warning">Update</button>
                 <button class="btn btn-danger">Delete</button>
             </div>
+            <button class="btn btn-primary"><a class="text-white text-decoration-none" href="insert.php">Insert</a></button>
         </div>
     </div>
         <?php endforeach; ?>
