@@ -1,11 +1,29 @@
 <?php
 
-$db = new PDO("mysql:host=localhost;dbname=phone4you_olc","root", "");
+$request_method = strtoupper($_SERVER['REQUEST_METHOD']);
+$db = new PDO("mysql:host=localhost;dbname=phone4you_olc", "root", "");
 
-$query = $db->prepare("SELECT * FROM vendor ");
-$query->execute();
+if ($request_method === 'GET') {
 
-$vendors = $query->fetchAll(PDO::FETCH_ASSOC);
+    $id = $_GET['id'];
+
+    $query = $db->prepare("SELECT * FROM vendor WHERE id = :id ");
+    $query->bindParam(':id', $id);
+    $query->execute();
+
+    $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
+    $vendor = $vendors[0];
+}
+
+if(isset($_POST['delete'])){
+    $id = filter_input(INPUT_POST, 'delete-id', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $query = $db->prepare("DELETE FROM vendor WHERE id = :id;  ");
+    $query->bindParam(':id', $id);
+    $query->execute();
+
+    header("Location: vendor_admin.php");
+}
 
 ?>
 
@@ -54,26 +72,34 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-fluid">
 
         <div class="row">
-            <?php
+            <div class="col-md-12">
+                <h4 class="text-danger">Weet je zeker dat je onderstaand record wilt verwijderen?</h4>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            foreach ($vendors as $vendor){
-                ?>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="<?php echo 'img/vendors/'.$vendor['image'];?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $vendor['name'];?></h5>
-                            <p class="card-text"><?php echo $vendor['description'];?></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
 
-                </div>
+                    <tr>
+                        <th scope="row"><?=$vendor['id']?></th>
+                        <td><?=$vendor['name']?></td>
+                        <td><?=$vendor['description']?></td>
+                    </tr>
 
-                <?php
-            }
-            ?>
+                    </tbody>
+                </table>
 
+                <a href="vendor_admin.php"><button>Nee red mij</button></a>
+                <form method="post" action="vendor_admin_delete.php">
+                    <input type="hidden" name="delete-id" value="<?=$id?> ">
+                    <button name="delete" type="submit">Ja delete maar</button>
+                </form>
+            </div>
         </div>
 
     </div>

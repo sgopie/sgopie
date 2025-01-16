@@ -1,16 +1,14 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <title>SmartPhone4u Home</title>
+    <link rel="stylesheet" href="css/phones.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,6 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-secondary fs-5" href="vendor.php">Bestellen</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary fs-5" href="vendor_admin.php">Vendor beheer</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -41,28 +42,46 @@
         <div class="row py-5"></div>
     </div>
 </header>
-<div class="container">
-    <h2>Registeren</h2>
-    <form method="post" action="">
-        <div class="mb-3">
-            <label for="n" class="form-label">Voornaam</label>
-            <input type="text" class="form-control" id="n" name="firstname"
-            value="<?php echo $inputs['firstname']?? '' ?>">
-            <div class="form-text text-danger">
-                <?= $errors['firstname'] ?? '' ?>
+<main>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 text-center pt-3">
+                <p class="fw-bold display-4">Toon hier Goedemiddag, goedemorgen of goedenavond</p>
+                <p class="fs-4">Wij zijn gespecialiseerd in in telefoons van Samsung en Apple</p>
+                <p class="fs-4 fst-italic">De betekenis van dit Engelse woord SmartPhone is 'slimme telefoon'. Het is een mobiele telefoon met extra functies. </p>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="n" class="form-label">Achternaam</label>
-            <input type="text" class="form-control" id="n" name="lastname"
-            value="<?php echo $inputs['lastname']?? '' ?>">
-            <div class="form-text text-danger">
-                <?= $errors['lastname'] ?? '' ?>
+        <div class="row">
+            <div class="col-md-12 text-center pt-2">
+                <p class="fw-bold fs-4">
+                <h2>Vandaag, laat de huidige datum zien</h2>
+                <h2>Bepaal hier of de winkel open of dicht is</h2>
+                </p>
             </div>
         </div>
-        
-    </form>
-</div>
+    </div>
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="card w-100">
+                    <a href="vendor.php"><img src="img/home1.png" class="card-img-top" style="object-fit: cover; height: 24rem"></a>
+                    <div class="card-body">
+                        <a class="card-link text-dark text-decoration-none" href="vendor.php">Bestel bij ons je nieuwe smartphone</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="card w-100">
+                    <a href="vendor.php"><img src="img/home2.png" class="card-img-top" style="object-fit: cover; height: 24rem"></a>
+                    <div class="card-body">
+                        <a class="card-link text-dark text-decoration-none" href="vendor.php">Keuze uit verschillende soorten smartphones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 <footer class="bg-dark">
     <div class="container-fluid text-white">
         <div class="row pb-3">
@@ -90,5 +109,6 @@
             </div>
         </div>
     </div>
+</footer>
 </body>
 </html>

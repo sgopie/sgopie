@@ -2,10 +2,12 @@
 
 $db = new PDO("mysql:host=localhost;dbname=phone4you_olc","root", "");
 
-$query = $db->prepare("SELECT * FROM vendor ");
+$query = $db->prepare("SELECT * FROM vendor WHERE id = :id ");
+$query->bindParam(':id', $_GET['id']);
 $query->execute();
 
 $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
+$vendor = $vendors[0];
 
 ?>
 
@@ -54,26 +56,29 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-fluid">
 
         <div class="row">
-            <?php
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            foreach ($vendors as $vendor){
-                ?>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="<?php echo 'img/vendors/'.$vendor['image'];?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $vendor['name'];?></h5>
-                            <p class="card-text"><?php echo $vendor['description'];?></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
 
-                </div>
+                    <tr>
+                        <th scope="row"><?=$vendor['id']?></th>
+                        <td><?=$vendor['name']?></td>
+                        <td><?=$vendor['description']?></td>
+                    </tr>
 
-                <?php
-            }
-            ?>
+                    </tbody>
+                </table>
 
+                <a href="vendor_admin.php">Ga terug</a>
+            </div>
         </div>
 
     </div>
