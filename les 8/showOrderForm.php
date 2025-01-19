@@ -1,22 +1,3 @@
-<?php
-$errors = [];
-$inputs = [];
-
-$request_method = strtoupper($_SERVER["REQUEST_METHOD"]);
-
-if ($request_method == "GET") {
-    //show form
-    require 'showOrderForm.php';
-} elseif ($request_method === "POST") {
-    //handle form submission
-    require 'handleFormOrder,php';
-    if (count($errors) > 0) {
-        //show form if error exists
-        require 'showOrderForm.php';
-    }
-}
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +10,7 @@ if ($request_method == "GET") {
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-    <title>les 7</title>
+    <title>les 8</title>
 </head>
 <body>
 <form method="post">
