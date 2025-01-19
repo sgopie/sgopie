@@ -2,15 +2,18 @@
 $errors = [];
 $inputs = [];
 
-$request_method =strtoupper($_SERVER["REQUEST_METHOD"]);
+$request_method = strtoupper($_SERVER["REQUEST_METHOD"]);
 
 if ($request_method == "GET") {
+    //show form
     require 'showOrderForm.php';
 } elseif ($request_method === "POST") {
+    //handle form submission
     require 'handleFormOrder,php';
-if (count($errors) > 0){
-    require 'showOrderForm.php';
-}
+    if (count($errors) > 0) {
+        //show form if error exists
+        require 'showOrderForm.php';
+    }
 }
 ?>
 
@@ -29,34 +32,14 @@ if (count($errors) > 0){
     <title>les 7</title>
 </head>
 <body>
-<div class="container">
-    <h2>review</h2>
-    <form method="post" action="">
-        <div class="mb-3">
-            <label for="n" class="form-label">Naam</label>
-            <input type="text" class="form-control" id="n" name="name"
-                   value="<?php echo $inputs['name'] ?? '' ?>">
-            <div class="form-text text-danger">
-                <?= $errors['name'] ?? '' ?>
-            </div>
-            <div class="mb-3">
-                <label for="b">Review</label>
-                <textarea name="review" id="b" class="form-control"><?php echo $inputs['review'] ?? '' ?></textarea>
-                <div class="form-text text-danger">
-                    <?= $errors['review'] ?? '' ?>
-                </div>
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="a" name="agree" value="agree"
-                    <?php echo(isset($inputs['agree']) ? 'checked=checked"' : '') ?>>
-                <label class="form-checker-label" for="a">accepteer voorwaarde</label>
-                <div class="form-text text-danger">
-                    <?= $errors['agree'] ?? '' ?>
-                </div>
-            </div>
-            <input type="submit" class="btn btn-primary" name="send" value="verzenden">
+<form method="post">
+    <div class="mb-3 mt-4">
+        <label for="fname" class="form-label">Voornaam:</label>
+        <input type="text" class="form-control" id="fname" value="<?php echo $inputs['fname'] ?? '' ?>" name="fname">
+        <div class="form-text text-danger">
+            <?= $errors['fname'] ?? '' ?>
         </div>
-    </form>
-</div>
+    </div>
+</form>
 </body>
 </html>
