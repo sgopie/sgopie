@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    ---header-en-footer: #000000;
+    ---header-en-footer-tekst: #ffffff;
+    ---homepage-overlay: rgba(0, 0, 0, 0.627);
+    ---homepage-overlay-hover: rgba(0, 0, 0, 0.637);
+    ---card-achtergrond: #f1f1f1;
+}
+
+header {
+    text-align: center;
+    background-color: var(---header-en-footer);
+    color: var(---header-en-footer-tekst);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid var(---header-en-footer-tekst);
+    border-bottom: 1px solid var(---header-en-footer-tekst);
+    background-color: var(---header-en-footer);
+    color: var(---header-en-footer-tekst);
+}
+
+a {
+    text-decoration: none;
+    color: var(---header-en-footer-tekst);
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+
+.ford-home{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.bmw-home{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.mercedes-home{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+@media screen and(min-width: 580px) {
+    .container{
+        width: 0;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .ford-home{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .bmw-home{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .mercedes-home{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+h1{
+    grid-column-start: 2;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.info{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.details{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.modellen{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.ford-1{
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.ford-2{
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.ford-3{
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.ford-4{
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.ford-5{
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+.ford-6{
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+footer {
+    text-align: center;
+    background-color: var(---header-en-footer);
+    color: var(---header-en-footer-tekst);
+    height: 37px;
+}
+
+/* .cars {
+    background-color: var(---card-achtergrond);
+    width: 500px;
+} */
