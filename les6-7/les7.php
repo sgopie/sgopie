@@ -46,7 +46,7 @@ if (isset($_POST['send'])) {
         $sth->bindValue(':review', $inputs['review']);
         $result = $sth->execute();
 
-        header('Location: master.php');
+        header('Location: vendor_add.php');
     }
 }
 ?>

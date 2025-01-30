@@ -16,5 +16,5 @@ if (count($errors) === 0) {
     } else {
         $_SESSION['message']="Je $smartphone->name niet is besteld!";
     }
-    header('Location: index.php');
+    header('Location: main.php');
 }
