@@ -61,6 +61,7 @@ if(isset($_POST['submit'])){
     <div class="row">
         <div class="col-md-12">
             <form method="post" action="vendor_add.php">
+                <a class="btn btn-primary" href="main.php">Go back to your cage MONKEY!!!!</a>
                 <div class="mb-3">
                     <label for="inputName" class="form-label">Name</label>
                     <input type="text" class="form-control" name="name" id="inputName" value="<?=$inputs['name'] ?? ''?>">

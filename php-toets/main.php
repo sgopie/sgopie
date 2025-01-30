@@ -34,9 +34,10 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $vendor['name'];?></h5>
                             <p class="card-text"><?php echo $vendor['description'];?></p>
-                            <a href="vendor_add.php" class="btn btn-primary">Add</a>
-                            <a href="vendor_update.php" class="btn btn-danger">Update</a>
-                            <a href="vendor_delete.php" class="btn btn-warning">Delete</a>
+                            <a class="btn btn-success" href="<?= "vendor_review.php?id=" . $vendor['id']?>">Review</a>
+                            <a class="btn btn-warning" href="<?= "vendor_update.php?id=" . $vendor['id']?>">Update</a>
+                            <a class="btn btn-danger" href="<?= "vendor_delete.php?id=" . $vendor['id']?>">Delete</a>
+
                         </div>
                     </div>
                 </div>
@@ -45,6 +46,7 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
             ?>
         </div>
     </div>
+    <a href="vendor_add.php" class="btn btn-primary">Add</a>
 </main>
 </body>
 </html>
