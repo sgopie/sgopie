@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--emerald);
+    background-color: var(--rich-black);
+}
+
+body {
+    color: var(--emerald);
+    background: var(--rich-black);
+}
+
+:root{
+    --rich-black: #051014;
+    --jet: #2E2F2F;
+    --emerald: #23CE6B;
+    --vivid-sky-blue: #2BD9FE;
+    --columbia-blue: #BFD1E5;
+}
+
+#icon{
+    color: var(--emerald);
+}
