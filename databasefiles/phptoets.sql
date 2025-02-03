@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 jan 2025 om 12:41
+-- Gegenereerd op: 03 feb 2025 om 14:27
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `phptoets`
 --
+CREATE DATABASE IF NOT EXISTS `phptoets` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `phptoets`;
 
 -- --------------------------------------------------------
 
@@ -39,11 +41,12 @@ CREATE TABLE `vendor` (
 --
 
 INSERT INTO `vendor` (`id`, `name`, `image`, `description`) VALUES
-(1, 'Sudhir', 'samsung.png', 'it might work'),
-(2, 'Gabriel', 'apple.png', 'beats woman'),
-(3, 'monkeh', 'monkey.jpg', 'he a ape'),
-(4, 'NI', 'apple.png', 'gabriel zei het'),
-(5, 'CKHER', 'samsung.png', 'deze is van mij');
+(1, 'Sudhir', 'ye.webp', 'hates Nick-hers :)'),
+(2, 'Gabriel', 'monkey.jpg', 'beats woman'),
+(7, 'Harmandeep', 'scemmer.jpg', 'likes novi'),
+(8, 'Kimberly', 'thewoman.avif', 'kills the woman beater'),
+(9, 'Novi', 'theman.jpg', 'likes harmandeep'),
+(10, 'Saniya', 'theracer.jpg', 'very good racer...');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -63,7 +66,7 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT voor een tabel `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
