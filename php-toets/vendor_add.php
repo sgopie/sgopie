@@ -103,21 +103,21 @@ if(isset($_POST['submit'])){
                             <form method="post" action="vendor_add.php">
                                 <div class="mb-3">
                                     <label for="inputName" class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="name" id="inputName" value="<?=$inputs['name'] ?? ''?>">
+                                    <input type="text" class="form-control" name="name" id="inputName" value="<?=$inputs['name'] ?? ''?>" placeholder="Wilson">
                                     <div class="form-text text-danger">
                                         <?= $errors['name'] ?? ''?>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputDescription" class="form-label">Description</label>
-                                    <input type="text" class="form-control" name="description" id="inputDescription" value="<?=$inputs['description'] ?? ''?>">
+                                    <input type="text" class="form-control" name="description" id="inputDescription" value="<?=$inputs['description'] ?? ''?>" placeholder="Lo siento">
                                     <div class="form-text text-danger">
                                         <?=$errors['description'] ?? ''?>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputImage" class="form-label">Image</label>
-                                    <input type="text" class="form-control" name="image" id="inputImage" value="<?=$inputs['image'] ?? ''?>">
+                                    <input type="text" class="form-control" name="image" id="inputImage" value="<?=$inputs['image'] ?? ''?>" placeholder="monkey.png">
                                     <div class="form-text text-danger">
                                         <?=$errors['image'] ?? ''?>
                                     </div>
