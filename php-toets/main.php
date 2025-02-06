@@ -29,6 +29,14 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
 <header>
     <div class="container-fluid">
         <div class="row">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="register.php"><h6>Register</h6></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="login.php"><h6>Login</h6></a>
+                </li>
+            </ul>
             <div class="col-sm-auto sticky-top">
                 <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top" id="nav">
                     <ul
