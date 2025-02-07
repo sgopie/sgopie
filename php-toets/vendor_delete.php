@@ -82,29 +82,31 @@ if (isset($_POST['delete'])) {
                 <main>
 
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <?php
-                                foreach ($vendors as $vendor) {
-                                    ?>
-                                    <div class="col-md-3">
-                                        <div class="card" style="width: 18rem;">
-                                            <img src="<?php echo 'img/vendors/' . $vendor['image']; ?>" class="card-img-top" alt="...">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="color: var(--emerald)"><?php echo $vendor['name']; ?></h5>
-                                                <p class="card-text"><?php echo $vendor['description']; ?></p>
-                                                <form method="post" action="vendor_delete.php">
-                                                    <input type="hidden" name="delete-id" value="<?= $id ?> ">
-                                                    <button name="delete" type="submit" class="btn btn-danger">Delete</button>
-                                                </form>
-                                                <a class="btn btn-primary" href="main.php">Go back to your cage MONKEY!!!!</a>
-                                            </div>
+                        <div class="row justify-content-center">
+                            <?php
+                            foreach ($vendors as $vendor) {
+                                ?>
+                                <div class="col-md-3">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="<?php echo 'img/vendors/' . $vendor['image']; ?>" class="card-img-top"
+                                             alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title"
+                                                style="color: var(--emerald)"><?php echo $vendor['name']; ?></h5>
+                                            <p class="card-text"><?php echo $vendor['description']; ?></p>
+                                            <form method="post" action="vendor_delete.php">
+                                                <input type="hidden" name="delete-id" value="<?= $id ?> ">
+                                                <button name="delete" type="submit" class="btn btn-danger">Delete
+                                                </button>
+                                            </form>
+                                            <a class="btn btn-primary" href="main.php">Go back to your cage
+                                                MONKEY!!!!</a>
                                         </div>
                                     </div>
-                                    <?php
-                                }
-                                ?>
-                            </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </main>
