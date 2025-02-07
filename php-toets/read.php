@@ -65,7 +65,7 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                                 <div class="col-md-3">
                                     <div class="card" style="width: 18rem;">
-                                        <img src="<?= 'img/vendors/' . $vendor['image'] ?>" class="card-img-top"
+                                        <img src="<?= 'img/vendors/' . $vendor['image'] ?>" class="card-img-top rounded mx-auto d-block"
                                              alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title" style="color: var(--emerald)"><?php echo $vendor['name']; ?></h5>

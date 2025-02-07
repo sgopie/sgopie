@@ -9,6 +9,8 @@
 body {
     color: var(--emerald);
     background: var(--rich-black);
+    overflow: hidden;
+    cursor: url("https://cursorstore.com/uploads/cursors/hoverJdjmdN.svg"), auto;
 }
 
 :root{

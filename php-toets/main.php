@@ -64,40 +64,42 @@ $vendors = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="col-sm p-3 min-vh-100">
                 <!-- content -->
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th style="background-color: var(--columbia-blue)" scope="col">#</th>
-                        <th style="background-color: var(--columbia-blue)" scope="col">Name</th>
-                        <th style="background-color: var(--columbia-blue)" scope="col">Description</th>
-                        <th style="background-color: var(--columbia-blue)" scope="col">Details</th>
-                        <th style="background-color: var(--columbia-blue)" scope="col">Update</th>
-                        <th style="background-color: var(--columbia-blue)" scope="col">Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    foreach ($vendors as $vendor) {
-                        ?>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
                         <tr>
-                            <th style="background-color: var(--columbia-blue)"><?= $vendor['id'] ?></th>
-                            <th style="background-color: var(--columbia-blue)"><?= $vendor['name'] ?></th>
-                            <td style="background-color: var(--columbia-blue)"><?= $vendor['description'] ?></td>
-                            <td style="background-color: var(--columbia-blue)"><a class="btn btn-success"
-                                                                                  href="<?= "vendor_review.php?id=" . $vendor['id'] ?>">details</a>
-                            </td>
-                            <td style="background-color: var(--columbia-blue)"><a class="btn btn-warning"
-                                                                                  href="<?= "vendor_update.php?id=" . $vendor['id'] ?>">update</a>
-                            </td>
-                            <td style="background-color: var(--columbia-blue)"><a class="btn btn-danger"
-                                                                                  href="<?= "vendor_delete.php?id=" . $vendor['id'] ?>">delete</a>
-                            </td>
+                            <th style="background-color: var(--columbia-blue)" scope="col">#</th>
+                            <th style="background-color: var(--columbia-blue)" scope="col">Name</th>
+                            <th style="background-color: var(--columbia-blue)" scope="col">Description</th>
+                            <th style="background-color: var(--columbia-blue)" scope="col">Details</th>
+                            <th style="background-color: var(--columbia-blue)" scope="col">Update</th>
+                            <th style="background-color: var(--columbia-blue)" scope="col">Delete</th>
                         </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
                         <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                        foreach ($vendors as $vendor) {
+                            ?>
+                            <tr>
+                                <th style="background-color: var(--columbia-blue)"><?= $vendor['id'] ?></th>
+                                <th style="background-color: var(--columbia-blue)"><?= $vendor['name'] ?></th>
+                                <td style="background-color: var(--columbia-blue)"><?= $vendor['description'] ?></td>
+                                <td style="background-color: var(--columbia-blue)"><a class="btn btn-success"
+                                                                                      href="<?= "vendor_review.php?id=" . $vendor['id'] ?>">details</a>
+                                </td>
+                                <td style="background-color: var(--columbia-blue)"><a class="btn btn-warning"
+                                                                                      href="<?= "vendor_update.php?id=" . $vendor['id'] ?>">update</a>
+                                </td>
+                                <td style="background-color: var(--columbia-blue)"><a class="btn btn-danger"
+                                                                                      href="<?= "vendor_delete.php?id=" . $vendor['id'] ?>">delete</a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
