@@ -48,6 +48,7 @@ INSERT INTO `vendor` (`id`, `name`, `image`, `description`) VALUES
 (5, 'Novi', 'theman.jpg', 'likes harmandeep'),
 (6, 'Saniya', 'theracer.jpg', 'very good racer...'),
 (7, 'Wilson', 'wilson.jpg', 'Lo siento');
+(8, 'Smurfcat', 'smurfcat.jpg', 'he in da forest');
 
 --
 -- Indexen voor geëxporteerde tabellen
