@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 feb 2025 om 08:52
+-- Gegenereerd op: 07 feb 2025 om 08:58
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -47,8 +47,8 @@ INSERT INTO `vendor` (`id`, `name`, `image`, `description`) VALUES
 (4, 'Kimberly', 'thewoman.avif', 'kills the woman beater'),
 (5, 'Novi', 'theman.jpg', 'likes harmandeep'),
 (6, 'Saniya', 'theracer.jpg', 'very good racer...'),
-(7, 'Wilson', 'wilson.jpg', 'Lo siento');
-(8, 'Smurfcat', 'smurfcat.jpg', 'he in da forest');
+(7, 'Wilson', 'wilson.jpg', 'Lo siento'),
+(8, 'Smurf Cat', 'smurfcat.jpg', 'He in da forest');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -68,7 +68,7 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT voor een tabel `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
