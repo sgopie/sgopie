@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 03 feb 2025 om 14:27
+-- Gegenereerd op: 07 feb 2025 om 08:52
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -43,10 +43,11 @@ CREATE TABLE `vendor` (
 INSERT INTO `vendor` (`id`, `name`, `image`, `description`) VALUES
 (1, 'Sudhir', 'ye.webp', 'hates Nick-hers :)'),
 (2, 'Gabriel', 'monkey.jpg', 'beats woman'),
-(7, 'Harmandeep', 'scemmer.jpg', 'likes novi'),
-(8, 'Kimberly', 'thewoman.avif', 'kills the woman beater'),
-(9, 'Novi', 'theman.jpg', 'likes harmandeep'),
-(10, 'Saniya', 'theracer.jpg', 'very good racer...');
+(3, 'Harmandeep', 'scemmer.jpg', 'likes novi'),
+(4, 'Kimberly', 'thewoman.avif', 'kills the woman beater'),
+(5, 'Novi', 'theman.jpg', 'likes harmandeep'),
+(6, 'Saniya', 'theracer.jpg', 'very good racer...'),
+(7, 'Wilson', 'wilson.jpg', 'Lo siento');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -66,7 +67,7 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT voor een tabel `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
